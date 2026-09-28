@@ -118,8 +118,8 @@ func NewHelloElemVersionBitmap() *HelloElemVersionBitmap {
 	h := new(HelloElemVersionBitmap)
 	h.HelloElemHeader = *NewHelloElemHeader()
 	h.Bitmaps = make([]uint32, 0)
-	// 10010 meaning openflow 1.0 & 1.3 support
-	h.Bitmaps = append(h.Bitmaps, uint32(1<<4)|uint32(1<<1))
+	// 0100 0010 meaning openflow 1.0 & 1.5 support
+	h.Bitmaps = append(h.Bitmaps, uint32(1<<6)|uint32(1<<1))
 	h.Length = h.Length + uint16(len(h.Bitmaps)*4)
 	return h
 }
